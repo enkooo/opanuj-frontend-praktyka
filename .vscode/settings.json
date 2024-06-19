@@ -1,4 +1,5 @@
 {
   "angular.enable-strict-mode-prompt": false,
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2
 }
