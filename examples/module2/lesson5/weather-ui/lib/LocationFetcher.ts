@@ -2,6 +2,7 @@ import axios from 'axios';
 import { LocationWeather } from '../models/LocationWeather';
 import { parseLocation } from './LocationParser';
 import { WeatherRequest } from '../models/WeatherRequest';
+import { normalizeWeatherDetails } from '../utils/normailzeWeatherDetails';
 
 async function getWeatherData(
   request: WeatherRequest
@@ -10,7 +11,7 @@ async function getWeatherData(
     `/api/weather?city=${request.city}&country=${request.country}`
   );
 
-  return data;
+  return normalizeWeatherDetails(data);
 }
 
 export async function fetchWeather(
